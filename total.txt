@@ -5,7 +5,7 @@
     },
     "guiveiga": {
         "pos": 2,
-        "pts": 945
+        "pts": 950
     },
     "Nik Bravo": {
         "pos": 3,
@@ -13,7 +13,7 @@
     },
     "Lucas Ynonye": {
         "pos": 4,
-        "pts": 910
+        "pts": 915
     },
     "JoaoRochaM": {
         "pos": 5,
@@ -29,15 +29,15 @@
     },
     "Kenno bittencourt": {
         "pos": 8,
-        "pts": 805
+        "pts": 810
     },
-    "rafinhapradox": {
+    "ddemiangm": {
         "pos": 9,
         "pts": 800
     },
-    "ddemiangm": {
+    "rafinhapradox": {
         "pos": 10,
-        "pts": 795
+        "pts": 800
     },
     "wellen": {
         "pos": 11,
