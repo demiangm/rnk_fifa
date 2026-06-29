@@ -1,0 +1,140 @@
+(() => {
+
+    // ==========================================
+    // SNAPSHOT ANTERIOR
+    // ==========================================
+
+    const PREVIOUS_RANKING ={
+        "Onlyflancis": { "pos": 1, "pts": 935 },
+        "guiveiga": { "pos": 2, "pts": 915 },
+        "Nik Bravo": { "pos": 3, "pts": 905 },
+        "JoaoRochaM": { "pos": 4, "pts": 860 },
+        "Lucas Ynonye": { "pos": 5, "pts": 840 },
+        "Tchay": { "pos": 6, "pts": 825 },
+        "fef0": { "pos": 7, "pts": 815 },
+        "ddemiangm": { "pos": 8, "pts": 780 },
+        "Kenno bittencourt": { "pos": 9, "pts": 775 },
+        "rafinhapradox": { "pos": 10, "pts": 770 },
+        "wellen": { "pos": 11, "pts": 720 },
+        "jaqueventurim": { "pos": 12, "pts": 720 },
+        "madumadureira": { "pos": 13, "pts": 695 },
+        "Lau Dias": { "pos": 14, "pts": 390 },
+        "Tams123": { "pos": 15, "pts": 245 }
+    };
+
+    // ==========================================
+    // LIMPEZA DE EXECUÇÕES ANTERIORES
+    // ==========================================
+
+    document.querySelectorAll('.fantasy-added').forEach(el => el.remove());
+
+    const rows = document.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+        row.classList.remove('xvcJA');
+        row.style.setProperty('background', 'transparent', 'important');
+        row.style.setProperty('background-color', 'transparent', 'important');
+        row.style.setProperty('border-bottom', '1px solid #e6e6e6', 'important');
+
+        row.querySelectorAll('td').forEach(td => {
+            td.style.setProperty('background', 'transparent', 'important');
+            td.style.setProperty('background-color', 'transparent', 'important');
+        });
+    });
+
+    // ==========================================
+    // PROCESSAMENTO
+    // ==========================================
+
+    const currentRanking = {};
+
+    rows.forEach(row => {
+        const posCell = row.querySelector('td:nth-child(1)');
+        const userCell = row.querySelector('.username span');
+        const ptsCell = row.querySelector('td:nth-child(3)');
+
+        if (!posCell || !userCell || !ptsCell) return;
+
+        const username = userCell.textContent.trim();
+        const pos = parseInt(posCell.textContent.match(/\d+/)?.[0] || '0', 10);
+        const pts = parseInt(ptsCell.textContent.match(/\d+/)?.[0] || '0', 10);
+
+        currentRanking[username] = { pos, pts };
+
+        const previous = PREVIOUS_RANKING[username];
+        let pointsDelta = 0;
+        let posDelta = 0;
+
+        if (previous) {
+            pointsDelta = pts - previous.pts;
+            posDelta = previous.pos - pos;
+        }
+
+        // POSIÇÃO
+        let arrow = '►';
+        let arrowColor = '#888';
+
+        if (!previous) { arrow = '★'; arrowColor = '#f5a623'; }
+        else if (posDelta > 0) { arrow = '▲'; arrowColor = '#0a9f2e'; }
+        else if (posDelta < 0) { arrow = '▼'; arrowColor = '#d93025'; }
+
+        posCell.innerHTML = `
+            <span style="display:flex; justify-content:center; align-items:center; gap:4px;">
+                <span>${pos}</span>
+                <span style="color:${arrowColor}; font-size:11px; font-weight:bold;">${arrow}</span>
+            </span>
+        `;
+
+        // PONTUAÇÃO
+        ptsCell.innerHTML = '';
+        const score = document.createElement('span');
+        score.textContent = pts;
+        score.style.display = 'inline-block';
+        score.style.width = '42px';
+        score.style.textAlign = 'right';
+        ptsCell.appendChild(score);
+
+        const delta = document.createElement('span');
+        delta.className = 'fantasy-added';
+        delta.style.marginLeft = '8px';
+        delta.style.fontSize = '11px';
+
+        let deltaColor = '#888';
+        if (pointsDelta > 0) deltaColor = '#0a9f2e';
+        else if (pointsDelta < 0) deltaColor = '#d93025';
+        delta.style.color = deltaColor;
+
+        if (!previous) delta.textContent = `+${pts}`;
+        else if (pointsDelta === 0) delta.textContent = '0';
+        else delta.textContent = `${pointsDelta > 0 ? '+' : ''}${pointsDelta}`;
+
+        ptsCell.appendChild(delta);
+    });
+
+    // ==========================================
+    // SNAPSHOT NOVO (CÓPIA AUTOMÁTICA INFALÍVEL)
+    // ==========================================
+
+    const snapshotString = JSON.stringify(currentRanking, null, 4);
+
+    // Cria um elemento de texto temporário para forçar a cópia
+    const textarea = document.createElement('textarea');
+    textarea.value = snapshotString;
+    textarea.style.position = 'fixed'; // Impede scroll na tela
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        document.execCommand('copy');
+        console.log(
+            '%c=== COPIADO AUTOMATICAMENTE PARA A ÁREA DE TRANSFERÊNCIA ===',
+            'color:green;font-weight:bold;font-size:12px;'
+        );
+    } catch (err) {
+        console.log('%c=== FALHA AO COPIAR. COPIE MANUALLY ABAIXO ===', 'color:red;font-weight:bold;');
+        console.log(snapshotString);
+    }
+
+    document.body.removeChild(textarea);
+
+})();
