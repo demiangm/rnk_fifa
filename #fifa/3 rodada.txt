@@ -1,0 +1,235 @@
+(() => {
+
+    // ==========================================
+    // SNAPSHOT ANTERIOR
+    // ==========================================
+
+    const PREVIOUS_RANKING = {
+{
+    "guiveiga": {
+        "pos": 1,
+        "pts": 100
+    },
+    "Onlyflancis": {
+        "pos": 2,
+        "pts": 90
+    },
+    "Nik Bravo": {
+        "pos": 3,
+        "pts": 80
+    },
+    "JoaoRochaM": {
+        "pos": 4,
+        "pts": 80
+    },
+    "Lucas Ynonye": {
+        "pos": 5,
+        "pts": 70
+    },
+    "fef0": {
+        "pos": 6,
+        "pts": 65
+    },
+    "Tchay": {
+        "pos": 7,
+        "pts": 65
+    },
+    "jaqueventurim": {
+        "pos": 8,
+        "pts": 60
+    },
+    "ddemiangm": {
+        "pos": 9,
+        "pts": 55
+    },
+    "wellen": {
+        "pos": 10,
+        "pts": 55
+    },
+    "rafinhapradox": {
+        "pos": 11,
+        "pts": 55
+    },
+    "Kenno bittencourt": {
+        "pos": 12,
+        "pts": 50
+    },
+    "madumadureira": {
+        "pos": 13,
+        "pts": 0
+    },
+    "Tams123": {
+        "pos": 14,
+        "pts": 0
+    },
+    "Lau Dias": {
+        "pos": 15,
+        "pts": 0
+    }
+};
+
+    // ==========================================
+    // LIMPEZA DE EXECUÇÕES ANTERIORES
+    // ==========================================
+
+    document.querySelectorAll('.fantasy-added').forEach(el => el.remove());
+
+    const rows = document.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+
+        row.classList.remove('xvcJA');
+
+        row.style.setProperty('background', 'transparent', 'important');
+        row.style.setProperty('background-color', 'transparent', 'important');
+row.style.setProperty('border-bottom', '1px solid #e6e6e6', 'important');
+
+        row.querySelectorAll('td').forEach(td => {
+            td.style.setProperty('background', 'transparent', 'important');
+            td.style.setProperty('background-color', 'transparent', 'important');
+        });
+
+    });
+
+    // ==========================================
+    // PROCESSAMENTO
+    // ==========================================
+
+    const currentRanking = {};
+
+    rows.forEach(row => {
+
+        const posCell = row.querySelector('td:nth-child(1)');
+        const userCell = row.querySelector('.username span');
+        const ptsCell = row.querySelector('td:nth-child(3)');
+
+        if (!posCell || !userCell || !ptsCell) return;
+
+        const username = userCell.textContent.trim();
+
+        const pos =
+            parseInt(
+                posCell.textContent.match(/\d+/)?.[0] || '0',
+                10
+            );
+
+        const pts =
+            parseInt(
+                ptsCell.textContent.match(/\d+/)?.[0] || '0',
+                10
+            );
+
+        currentRanking[username] = {
+            pos,
+            pts
+        };
+
+        const previous = PREVIOUS_RANKING[username];
+
+        let pointsDelta = 0;
+        let posDelta = 0;
+
+        if (previous) {
+            pointsDelta = pts - previous.pts;
+            posDelta = previous.pos - pos;
+        }
+
+        // ==========================================
+        // POSIÇÃO
+        // ==========================================
+
+        let arrow = '►';
+        let arrowColor = '#888';
+
+        if (!previous) {
+            arrow = '★';
+            arrowColor = '#f5a623';
+        }
+        else if (posDelta > 0) {
+            arrow = '▲';
+            arrowColor = '#0a9f2e';
+        }
+        else if (posDelta < 0) {
+            arrow = '▼';
+            arrowColor = '#d93025';
+        }
+
+        posCell.innerHTML = `
+            <span style="
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                gap:4px;
+            ">
+                <span>${pos}</span>
+                <span style="
+                    color:${arrowColor};
+                    font-size:11px;
+                    font-weight:bold;
+                ">
+                    ${arrow}
+                </span>
+            </span>
+        `;
+
+        // ==========================================
+        // PONTUAÇÃO
+        // ==========================================
+
+        ptsCell.innerHTML = '';
+
+        const score = document.createElement('span');
+
+        score.textContent = pts;
+
+        score.style.display = 'inline-block';
+        score.style.width = '42px';
+        score.style.textAlign = 'right';
+
+        ptsCell.appendChild(score);
+
+        const delta = document.createElement('span');
+
+        delta.className = 'fantasy-added';
+
+        delta.style.marginLeft = '8px';
+        delta.style.fontSize = '11px';
+
+        let deltaColor = '#888';
+
+        if (pointsDelta > 0) {
+            deltaColor = '#0a9f2e';
+        }
+        else if (pointsDelta < 0) {
+            deltaColor = '#d93025';
+        }
+
+        delta.style.color = deltaColor;
+
+        if (!previous) {
+            delta.textContent = `+${pts}`;
+        }
+        else if (pointsDelta === 0) {
+            delta.textContent = '0';
+        }
+        else {
+            delta.textContent =
+                `${pointsDelta > 0 ? '+' : ''}${pointsDelta}`;
+        }
+
+        ptsCell.appendChild(delta);
+
+    });
+
+    // ==========================================
+    // SNAPSHOT NOVO
+    // ==========================================
+
+    console.log(
+        '%c=== COPIE ESTE SNAPSHOT PARA A PRÓXIMA RODADA ===',
+        'color:green;font-weight:bold'
+    );
+
+    console.log(JSON.stringify(currentRanking, null, 4));
+
+})();
