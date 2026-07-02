@@ -1,55 +1,55 @@
 {
     "guiveiga": {
         "pos": 1,
-        "pts": 1175
+        "pts": 1195
     },
     "Onlyflancis": {
         "pos": 2,
-        "pts": 1130
+        "pts": 1160
     },
     "Nik Bravo": {
         "pos": 3,
-        "pts": 1055
-    },
-    "JoaoRochaM": {
-        "pos": 4,
-        "pts": 1030
-    },
-    "Lucas Ynonye": {
-        "pos": 5,
-        "pts": 1030
+        "pts": 1090
     },
     "fef0": {
+        "pos": 4,
+        "pts": 1050
+    },
+    "JoaoRochaM": {
+        "pos": 5,
+        "pts": 1050
+    },
+    "Lucas Ynonye": {
         "pos": 6,
-        "pts": 1025
+        "pts": 1040
     },
     "Kenno bittencourt": {
         "pos": 7,
-        "pts": 960
+        "pts": 980
     },
     "ddemiangm": {
         "pos": 8,
-        "pts": 945
-    },
-    "Tchay": {
-        "pos": 9,
-        "pts": 940
+        "pts": 975
     },
     "rafinhapradox": {
+        "pos": 9,
+        "pts": 960
+    },
+    "Tchay": {
         "pos": 10,
-        "pts": 925
+        "pts": 955
     },
     "jaqueventurim": {
         "pos": 11,
-        "pts": 900
+        "pts": 915
     },
     "wellen": {
         "pos": 12,
-        "pts": 875
+        "pts": 895
     },
     "madumadureira": {
         "pos": 13,
-        "pts": 850
+        "pts": 865
     },
     "Lau Dias": {
         "pos": 14,
