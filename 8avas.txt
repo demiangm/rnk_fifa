@@ -15,25 +15,25 @@
         "pos": 4,
         "pts": 75
     },
-    "rafinhapradox": {
-        "pos": 5,
-        "pts": 65
-    },
     "Kenno bittencourt": {
+        "pos": 5,
+        "pts": 70
+    },
+    "rafinhapradox": {
         "pos": 6,
-        "pts": 50
+        "pts": 65
     },
     "ddemiangm": {
         "pos": 7,
         "pts": 45
     },
-    "guiveiga": {
-        "pos": 8,
-        "pts": 40
-    },
     "Lucas Ynonye": {
+        "pos": 8,
+        "pts": 45
+    },
+    "guiveiga": {
         "pos": 9,
-        "pts": 35
+        "pts": 40
     },
     "jaqueventurim": {
         "pos": 10,
