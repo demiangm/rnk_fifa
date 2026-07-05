@@ -21,19 +21,19 @@
     },
     "Lucas Ynonye": {
         "pos": 6,
-        "pts": 1155
+        "pts": 1165
     },
     "ddemiangm": {
         "pos": 7,
         "pts": 1145
     },
-    "rafinhapradox": {
-        "pos": 8,
-        "pts": 1115
-    },
     "Kenno bittencourt": {
+        "pos": 8,
+        "pts": 1130
+    },
+    "rafinhapradox": {
         "pos": 9,
-        "pts": 1110
+        "pts": 1115
     },
     "wellen": {
         "pos": 10,
