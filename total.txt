@@ -1,7 +1,7 @@
 {
     "Onlyflancis": {
         "pos": 1,
-        "pts": 1340
+        "pts": 1350
     },
     "guiveiga": {
         "pos": 2,
@@ -9,35 +9,35 @@
     },
     "Nik Bravo": {
         "pos": 3,
-        "pts": 1245
+        "pts": 1265
     },
     "JoaoRochaM": {
         "pos": 4,
-        "pts": 1240
+        "pts": 1245
     },
     "fef0": {
         "pos": 5,
-        "pts": 1230
+        "pts": 1235
     },
     "Lucas Ynonye": {
         "pos": 6,
-        "pts": 1165
+        "pts": 1170
     },
     "ddemiangm": {
         "pos": 7,
-        "pts": 1145
+        "pts": 1150
     },
     "Kenno bittencourt": {
         "pos": 8,
-        "pts": 1130
+        "pts": 1150
     },
     "rafinhapradox": {
         "pos": 9,
-        "pts": 1115
+        "pts": 1120
     },
     "wellen": {
         "pos": 10,
-        "pts": 1065
+        "pts": 1070
     },
     "Tchay": {
         "pos": 11,
@@ -45,7 +45,7 @@
     },
     "jaqueventurim": {
         "pos": 12,
-        "pts": 1015
+        "pts": 1020
     },
     "madumadureira": {
         "pos": 13,
