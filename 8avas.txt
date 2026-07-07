@@ -1,27 +1,27 @@
 {
     "Nik Bravo": {
         "pos": 1,
-        "pts": 145
-    },
-    "Kenno bittencourt": {
-        "pos": 2,
-        "pts": 130
+        "pts": 160
     },
     "Onlyflancis": {
-        "pos": 3,
-        "pts": 120
+        "pos": 2,
+        "pts": 135
     },
     "JoaoRochaM": {
-        "pos": 4,
-        "pts": 120
+        "pos": 3,
+        "pts": 135
     },
-    "rafinhapradox": {
-        "pos": 5,
-        "pts": 115
+    "Kenno bittencourt": {
+        "pos": 4,
+        "pts": 130
     },
     "ddemiangm": {
+        "pos": 5,
+        "pts": 125
+    },
+    "rafinhapradox": {
         "pos": 6,
-        "pts": 110
+        "pts": 120
     },
     "guiveiga": {
         "pos": 7,
@@ -45,7 +45,7 @@
     },
     "Tchay": {
         "pos": 12,
-        "pts": 40
+        "pts": 55
     },
     "madumadureira": {
         "pos": 13,
