@@ -13,7 +13,7 @@
     },
     "Nik Bravo": {
         "pos": 4,
-        "pts": 1395
+        "pts": 1405
     },
     "ddemiangm": {
         "pos": 5,
@@ -23,13 +23,13 @@
         "pos": 6,
         "pts": 1320
     },
-    "Kenno bittencourt": {
-        "pos": 7,
-        "pts": 1295
-    },
     "Lucas Ynonye": {
+        "pos": 7,
+        "pts": 1310
+    },
+    "Kenno bittencourt": {
         "pos": 8,
-        "pts": 1290
+        "pts": 1295
     },
     "rafinhapradox": {
         "pos": 9,
