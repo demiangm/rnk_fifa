@@ -5,7 +5,7 @@
     },
     "guiveiga": {
         "pos": 2,
-        "pts": 1500
+        "pts": 1505
     },
     "JoaoRochaM": {
         "pos": 3,
@@ -45,7 +45,7 @@
     },
     "jaqueventurim": {
         "pos": 12,
-        "pts": 1105
+        "pts": 1110
     },
     "madumadureira": {
         "pos": 13,
