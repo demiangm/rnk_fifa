@@ -45,7 +45,7 @@
     },
     "jaqueventurim": {
         "pos": 12,
-        "pts": 1090
+        "pts": 1105
     },
     "madumadureira": {
         "pos": 13,
